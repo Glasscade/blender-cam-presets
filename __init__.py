@@ -13,3 +13,15 @@ def setRes(x_res, y_res):
 getRes()
 
 setRes(1920,1080)
+
+class CameraPresetPanel(bpy.types.Panel):
+    bl_label = "Camera Presets Panel"
+    bl_idname = "CameraPresets_main_panel"
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'Tool'
+    bl_category = "CamPresets"
+
+    def draw(self, context):
+        self.layout.label(text="Test Panel")
+
+bpy.utils.register_class(CameraPresetPanel)

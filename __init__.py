@@ -2,10 +2,29 @@ import bpy
 import os
 import json
 
+# Basic Preset Format
+
+## Cam Types
+# "PERSP", "ORTHO", "PANO"
+# To Add: Fisheye Equisolid Options, include default params.
+
+
 loadedpresets = {
+    ## Render Settings
     "x_res": 1400,
-    "y_res": 1400
+    "y_res": 1400,
+    ## Camera Settings
+    "cam_type": "PERSP",
+    "lens_unit": "MILLIMETRES", #/"FOV"
+    "focal_length": 51,
+    "shift_x": 0.0,
+    "shift_y": 0.0,
+    "clip_start": 0.0001,
+    "clip_end": 100
 }
+
+
+
 
 # Write Test
 with open('./blender-cam-presets/presets.json', 'w') as f:

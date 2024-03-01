@@ -1,4 +1,15 @@
 import bpy
+import os
+import json
+
+loadedpresets = {
+    "x_res": 1400,
+    "y_res": 1400
+}
+
+def saveCamPresetTest():
+    with open('presets.json', 'w') as f:
+        json.dump(loadedpresets,f, indent=4)
 
 def getRes():
     current_scene = bpy.context.scene
@@ -11,7 +22,6 @@ def setRes(x_res, y_res):
     current_scene.render.resolution_x = x_res
     current_scene.render.resolution_y = y_res
 getRes()
-
 setRes(1920,1080)
 
 class CameraPresetPanel(bpy.types.Panel):

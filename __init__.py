@@ -1,8 +1,13 @@
 import bpy
 import os
+import json
 
+def saveCurrentCamera():
+    savedcamname = "cameratest1"
+    return savedcamname
+savedcamname = saveCurrentCamera()
+savedcamname = saveCurrentCamera()
 
-savedcamname = ""
 # Basic Preset Format
 
 ## Cam Types
@@ -27,11 +32,6 @@ testpreset = {
     }
 }
 
-def saveCurrentCamera():
-    savedcamname = "cameratest1"
-    return savedcamname
-
-saveCurrentCamera()
 
 # Write Test
 with open('./blender-cam-presets/presets.json', 'w') as f:

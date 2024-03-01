@@ -1,11 +1,14 @@
 {
-    "x_res": 1400,
-    "y_res": 1400,
-    "cam_type": "PERSP",
-    "lens_unit": "MILLIMETRES",
-    "focal_length": 51,
-    "shift_x": 0.0,
-    "shift_y": 0.0,
-    "clip_start": 0.0001,
-    "clip_end": 100
+    "presets": {
+        "preset_name": "cameratest1",
+        "x_res": 1400,
+        "y_res": 1400,
+        "cam_type": "PERSP",
+        "lens_unit": "MILLIMETRES",
+        "focal_length": 51,
+        "shift_x": 0.0,
+        "shift_y": 0.0,
+        "clip_start": 0.0001,
+        "clip_end": 100
+    }
 }

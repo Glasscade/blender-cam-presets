@@ -7,9 +7,13 @@ loadedpresets = {
     "y_res": 1400
 }
 
-def saveCamPresetTest():
-    with open('presets.json', 'w') as f:
-        json.dump(loadedpresets,f, indent=4)
+# Write Test
+with open('./blender-cam-presets/presets.json', 'w') as f:
+    json.dump(loadedpresets,f, indent=4)
+
+# Read Test
+with open('./blender-cam-presets/presets.json', 'r') as jfile:
+    data = json.load(jfile)
 
 def getRes():
     current_scene = bpy.context.scene
@@ -22,7 +26,7 @@ def setRes(x_res, y_res):
     current_scene.render.resolution_x = x_res
     current_scene.render.resolution_y = y_res
 getRes()
-setRes(1920,1080)
+setRes(data["x_res"],data["y_res"])
 
 class CameraPresetPanel(bpy.types.Panel):
     bl_label = "Camera Presets"

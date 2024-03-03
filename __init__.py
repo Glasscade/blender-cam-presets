@@ -60,7 +60,7 @@ with open('./blender-cam-presets/presets.json', 'r+') as jfile:
     data = json.load(jfile)
     data["presets"].append(appendMe)
     jfile.seek(0)
-    json.dump(data, indent=4)
+    json.dump(data, jfile, indent=4)
     jfile.truncate()
 
 

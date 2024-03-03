@@ -16,6 +16,7 @@ savedcamname = saveCurrentCamera()
 
 testpreset = {
     "presets":
+    [
     {
     ## Render Settings
     "preset_name": savedcamname,
@@ -30,12 +31,32 @@ testpreset = {
     "clip_start": 0.0001,
     "clip_end": 100
     }
+    ]
 }
 
+# Appendable Preset
+appendMe = {
+    ## Render Settings
+    "preset_name": "testcamappend",
+    "x_res": 1401,
+    "y_res": 1460,
+    ## Camera Settings
+    "cam_type": "PERSP",
+    "lens_unit": "MILLIMETRES", #/"FOV"
+    "focal_length": 51,
+    "shift_x": 0.0,
+    "shift_y": 0.0,
+    "clip_start": 0.0001,
+    "clip_end": 100
+    }
+
+
+# Append
 
 # Write Test
 with open('./blender-cam-presets/presets.json', 'w') as f:
     json.dump(testpreset,f, indent=4)
+
 # Read Test
 with open('./blender-cam-presets/presets.json', 'r') as jfile:
     data = json.load(jfile)
@@ -54,8 +75,8 @@ def setRes(x_res, y_res):
     current_scene = bpy.context.scene
     current_scene.render.resolution_x = x_res
     current_scene.render.resolution_y = y_res
-getRes()
-setRes(data["x_res"],data["y_res"])
+getRes() 
+setRes(data["presets"][0]["x_res"],data["presets"][0]["y_res"])
 
 class CameraPresetPanel(bpy.types.Panel):
     bl_label = "Camera Presets"

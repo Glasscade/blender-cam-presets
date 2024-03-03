@@ -50,11 +50,6 @@ appendMe = {
     "clip_end": 100
     }
 
-
-# Write Test
-# with open('./blender-cam-presets/presets.json', 'w') as f:
-#     json.dump(testpreset,f, indent=4)
-
 # Read Test
 with open('./blender-cam-presets/presets.json', 'r+') as jfile:
     data = json.load(jfile)
@@ -62,9 +57,6 @@ with open('./blender-cam-presets/presets.json', 'r+') as jfile:
     jfile.seek(0)
     json.dump(data, jfile, indent=4)
     jfile.truncate()
-
-
-
 
 # Prompt the user for a camera name too.
 def saveCurrentCamera():
@@ -81,7 +73,7 @@ def setRes(x_res, y_res):
     current_scene.render.resolution_x = x_res
     current_scene.render.resolution_y = y_res
 getRes() 
-setRes(data["presetss"][0]["x_res"],data["presets"][0]["y_res"])
+setRes(data["presets"][1]["x_res"],data["presets"][1]["y_res"])
 
 class CameraPresetPanel(bpy.types.Panel):
     bl_label = "Camera Presets"

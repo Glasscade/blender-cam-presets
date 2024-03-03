@@ -51,15 +51,13 @@ appendMe = {
     }
 
 
-# Append
-
-# Write Test
-with open('./blender-cam-presets/presets.json', 'w') as f:
-    json.dump(testpreset,f, indent=4)
-
-# Read Test
+# Append Test
 with open('./blender-cam-presets/presets.json', 'r') as jfile:
     data = json.load(jfile)
+    with open('./blender-cam-presets/presets.json', 'w') as f:
+        data = data.append(appendMe)
+
+
 
 # Prompt the user for a camera name too.
 def saveCurrentCamera():

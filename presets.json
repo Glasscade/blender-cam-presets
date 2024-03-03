@@ -23,6 +23,18 @@
             "shift_y": 0.0,
             "clip_start": 0.0001,
             "clip_end": 100
+        },
+        {
+            "preset_name": "testcamappend",
+            "x_res": 1401,
+            "y_res": 1460,
+            "cam_type": "PERSP",
+            "lens_unit": "MILLIMETRES",
+            "focal_length": 51,
+            "shift_x": 0.0,
+            "shift_y": 0.0,
+            "clip_start": 0.0001,
+            "clip_end": 100
         }
     ]
 }
